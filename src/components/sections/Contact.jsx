@@ -11,7 +11,7 @@ export const Contact = () => {
 
 
   function handleChange(e){
-
+e
     setFormData((prev)=>{
       return {
         ...prev,
