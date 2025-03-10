@@ -8,11 +8,10 @@ export const Contact = () => {
   const [formData, setFormData] = useState({});
   const [isAlertClosed, setIsAlertClosed] = useState(false);
   const successMessage = "Message Sent";
-  console.log(isAlertClosed);
-  console.log(setIsAlertClosed);
+
 
   function handleChange(e){
-    console.log(e.target.id);
+
     setFormData((prev)=>{
       return {
         ...prev,
