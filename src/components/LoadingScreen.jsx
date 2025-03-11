@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export const LoadingScreen = ({ onComplete }) => {
 
     const [text, setText] = useState("");
-    const fullText = "Hello Paidi";
+    const [showAnimation, setShowAnimation] = useState(false);
+    const fullText = "Hello Amigos";
 
     useEffect(()=>{
         let index = 0;
@@ -14,9 +16,13 @@ export const LoadingScreen = ({ onComplete }) => {
             if (index > fullText.length) {
                 clearInterval(interval);
 
+                setTimeout(()=>{
+                  setShowAnimation(true);
+                },500);
+
                 setTimeout(() => {
                     onComplete();
-                }, 1000);
+                }, 3000);
             }
         }, 100);
 
@@ -25,8 +31,24 @@ export const LoadingScreen = ({ onComplete }) => {
 
     return (
         <div className="fixed inset-0 z-50 bg-black text-gray-100 flex flex-col items-center justify-center">
-          <div className="mb-4 text-4xl font-mono font-bold">
-            {text} <span className="animate-blink ml-1">|</span>
+          <div className=" flex mb-4 text-4xl font-mono font-bold">
+
+           <span> {text} </span>
+           <span>
+            {showAnimation && (
+                  <DotLottieReact
+                  src="https://lottie.host/aeedd5ed-1de0-4a86-95d4-ed3e71aee1f7/ZZXcw1Ujvp.lottie"
+                  loop
+                  autoplay
+                  className="w-10 h-10 ml-1"
+                />
+                )}
+                
+            </span>
+            <span className="animate-blink ml-1">|</span>
+
+          
+            
           </div>
     
           <div className="w-[200px] h-[2px] bg-gray-800 rounded relative overflow-hidden">
