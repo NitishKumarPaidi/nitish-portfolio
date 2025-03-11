@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import nameLogo from "../assets/nameLogo.png";
+import nameLogo from "../../public/assets/nameLogo.png";
 
 
 export const Navbar = ({menuOpen, setMenuOpen}) => {
@@ -11,9 +11,8 @@ export const Navbar = ({menuOpen, setMenuOpen}) => {
         <div className="max-w-5xl mx-auto px-4">
             <div className="flex justify-between items-center h-16" >
                 <a href="#home" className="flex justify-evenly">
-                    <img src={nameLogo} className="w-8 h-8 rounded-full"></img> <span> </span>
+                    <img src={nameLogo} className="w-12 h-8 rounded-full"></img> <span> </span>
                     <div href="" className="font-mono  text-xl font-bold text-white">
-                        
                         Nitish<span className="text-blue-500">.Paidi</span>
                     </div>
                 </a>
